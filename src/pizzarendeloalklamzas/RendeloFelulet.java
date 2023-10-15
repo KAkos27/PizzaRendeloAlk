@@ -390,8 +390,9 @@ public class RendeloFelulet extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Nem választottál pizzát!");
         }
         osszeg = osszeg * mennyiseg;
-         
-        TFFizetendo.setText(osszeg + " Ft");
+        if(index > 0){ 
+            TFFizetendo.setText(osszeg + " Ft");
+        }
     }//GEN-LAST:event_BTKiszamolActionPerformed
 
     /**
