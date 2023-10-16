@@ -380,7 +380,7 @@
                       <Component id="BTKiszamol" max="32767" attributes="0"/>
                       <Component id="BTRendeles" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="LBMennyiseg" pref="61" max="32767" attributes="0"/>
+                          <Component id="LBMennyiseg" max="32767" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="SPMennyiseg" min="-2" pref="89" max="-2" attributes="0"/>
                           <EmptySpace min="19" pref="19" max="-2" attributes="0"/>

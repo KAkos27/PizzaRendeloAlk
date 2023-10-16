@@ -326,13 +326,13 @@ public class RendeloFelulet extends javax.swing.JFrame {
         String pizza = (String)CMBPizzaValaszto.getSelectedItem();
         int index = CMBPizzaValaszto.getSelectedIndex();
         if(index == 1){
-            JOptionPane.showMessageDialog(rootPane,"Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella");
+            JOptionPane.showMessageDialog(rootPane,"Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
         }else if(index == 2){
-            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Parmezán, Brie, Gorgonzola");
+            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Parmezán, Brie, Gorgonzola","Pizza típus", JOptionPane.PLAIN_MESSAGE);
         }else if(index == 3){
-            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Kolbász, Szalonna");
+            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Kolbász, Szalonna","Pizza típus", JOptionPane.PLAIN_MESSAGE);
         }else if(index == 4){
-            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Szardella, Olívaolaj");        
+            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Szardella, Olívaolaj","Pizza típus", JOptionPane.PLAIN_MESSAGE);        
         }else{
              
         }
@@ -342,9 +342,9 @@ public class RendeloFelulet extends javax.swing.JFrame {
     private void BTRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTRendelesActionPerformed
         int index = CMBPizzaValaszto.getSelectedIndex();
         if(index ==0){
-            JOptionPane.showMessageDialog(rootPane, "Nem választottál pizzát!");
+            JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
          }else{
-            JOptionPane.showMessageDialog(rootPane, "Köszönjük a rendelést!");
+            JOptionPane.showMessageDialog(rootPane, "Köszönjük a rendelést!","Rendelés visszaigazolás", JOptionPane.PLAIN_MESSAGE);
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_BTRendelesActionPerformed
@@ -387,7 +387,7 @@ public class RendeloFelulet extends javax.swing.JFrame {
             osszeg += 50;
         }
         if(index ==0){
-            JOptionPane.showMessageDialog(rootPane, "Nem választottál pizzát!");
+            JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
         }
         osszeg = osszeg * mennyiseg;
         if(index > 0){ 
