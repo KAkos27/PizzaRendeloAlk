@@ -4,6 +4,7 @@
  */
 package pizzarendeloalklamzas;
 
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 
@@ -341,15 +342,19 @@ public class RendeloFelulet extends javax.swing.JFrame {
 
     private void BTRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTRendelesActionPerformed
         int index = CMBPizzaValaszto.getSelectedIndex();
-        String ures = TFFizetendo.getText();
-
+        int osszeg = 0;
+        int mennyiseg = (int) SPMennyiseg.getValue();
+        String szoveg = TFFizetendo.getText();
+        osszeg = szamolas(index, osszeg, mennyiseg);
+        
         if (index == 0) {
             TFFizetendo.setText("");
             JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
         } else {
-            if (!"".equals(ures)) {
+            if (szoveg.equals(String.valueOf(osszeg + " Ft"))) {
                 JOptionPane.showMessageDialog(rootPane, "Köszönjük a rendelést!", "Rendelés visszaigazolás", JOptionPane.PLAIN_MESSAGE);
             } else {
+                TFFizetendo.setText("");
                 JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem számoltad ki a rendelést!", "Hiba!", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -361,6 +366,14 @@ public class RendeloFelulet extends javax.swing.JFrame {
         int osszeg = 0;
         int mennyiseg = (int) SPMennyiseg.getValue();
 
+        osszeg = szamolas(index, osszeg, mennyiseg);
+
+        if (index > 0) {
+            TFFizetendo.setText(osszeg + " Ft");
+        }
+    }//GEN-LAST:event_BTKiszamolActionPerformed
+
+    private int szamolas(int index, int osszeg, int mennyiseg) throws HeadlessException {
         if (index == 0) {
             TFFizetendo.setText("");
             JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
@@ -398,13 +411,9 @@ public class RendeloFelulet extends javax.swing.JFrame {
         if (CBOlivaolaj.isSelected()) {
             osszeg += 50;
         }
-
         osszeg = osszeg * mennyiseg;
-
-        if (index > 0) {
-            TFFizetendo.setText(osszeg + " Ft");
-        }
-    }//GEN-LAST:event_BTKiszamolActionPerformed
+        return osszeg;
+    }
 
     /**
      * @param args the command line arguments
