@@ -323,79 +323,85 @@ public class RendeloFelulet extends javax.swing.JFrame {
 
     private void CMBPizzaValasztoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CMBPizzaValasztoActionPerformed
         // TODO add your handling code here:
-        String pizza = (String)CMBPizzaValaszto.getSelectedItem();
+        String pizza = (String) CMBPizzaValaszto.getSelectedItem();
         int index = CMBPizzaValaszto.getSelectedIndex();
-        if(index == 1){
-            JOptionPane.showMessageDialog(rootPane,"Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
-        }else if(index == 2){
-            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Parmezán, Brie, Gorgonzola","Pizza típus", JOptionPane.PLAIN_MESSAGE);
-        }else if(index == 3){
-            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Kolbász, Szalonna","Pizza típus", JOptionPane.PLAIN_MESSAGE);
-        }else if(index == 4){
-            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Szardella, Olívaolaj","Pizza típus", JOptionPane.PLAIN_MESSAGE);        
-        }else{
-             
+        if (index == 1) {
+            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
+        } else if (index == 2) {
+            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Parmezán, Brie, Gorgonzola", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
+        } else if (index == 3) {
+            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella, Kolbász, Szalonna", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
+        } else if (index == 4) {
+            JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Szardella, Olívaolaj", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
+        } else {
+
         }
-        
+
     }//GEN-LAST:event_CMBPizzaValasztoActionPerformed
 
     private void BTRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTRendelesActionPerformed
         int index = CMBPizzaValaszto.getSelectedIndex();
-        if(index ==0){
+        String ures = TFFizetendo.getText();
+
+        if (index == 0) {
             TFFizetendo.setText("");
             JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
-         }else{
-            JOptionPane.showMessageDialog(rootPane, "Köszönjük a rendelést!","Rendelés visszaigazolás", JOptionPane.PLAIN_MESSAGE);
+        } else {
+            if (!"".equals(ures)) {
+                JOptionPane.showMessageDialog(rootPane, "Köszönjük a rendelést!", "Rendelés visszaigazolás", JOptionPane.PLAIN_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem számoltad ki a rendelést!", "Hiba!", JOptionPane.ERROR_MESSAGE);
+            }
         }
-        
+
     }//GEN-LAST:event_BTRendelesActionPerformed
 
     private void BTKiszamolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTKiszamolActionPerformed
         int index = CMBPizzaValaszto.getSelectedIndex();
         int osszeg = 0;
         int mennyiseg = (int) SPMennyiseg.getValue();
-        
-        if(index ==0){
+
+        if (index == 0) {
             TFFizetendo.setText("");
             JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
         }
-        if (index == 1){
+        if (index == 1) {
             osszeg += 1780;
         }
-        if (index == 2){
+        if (index == 2) {
             osszeg += 1990;
         }
-        if (index == 3){
+        if (index == 3) {
             osszeg += 2190;
         }
-        if (index == 4){
+        if (index == 4) {
             osszeg += 1890;
         }
-        if (CBTeljeskiorlesu.isSelected()){
+        if (CBTeljeskiorlesu.isSelected()) {
             osszeg += 150;
         }
-        if (RB24.isSelected()){
+        if (RB24.isSelected()) {
             osszeg -= 125;
         }
-        if (RB40.isSelected()){
+        if (RB40.isSelected()) {
             osszeg += 125;
         }
-        if (CBMozzarella.isSelected()){
+        if (CBMozzarella.isSelected()) {
             osszeg += 100;
         }
-        if (CBChili.isSelected()){
+        if (CBChili.isSelected()) {
             osszeg += 75;
         }
-        if (CBBacon.isSelected()){
+        if (CBBacon.isSelected()) {
             osszeg += 100;
         }
-        if (CBOlivaolaj.isSelected()){
+        if (CBOlivaolaj.isSelected()) {
             osszeg += 50;
         }
-        
+
         osszeg = osszeg * mennyiseg;
-        
-        if(index > 0){ 
+
+        if (index > 0) {
             TFFizetendo.setText(osszeg + " Ft");
         }
     }//GEN-LAST:event_BTKiszamolActionPerformed
@@ -426,7 +432,7 @@ public class RendeloFelulet extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(RendeloFelulet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
