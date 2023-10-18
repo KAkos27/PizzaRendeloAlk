@@ -342,6 +342,7 @@ public class RendeloFelulet extends javax.swing.JFrame {
     private void BTRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTRendelesActionPerformed
         int index = CMBPizzaValaszto.getSelectedIndex();
         if(index ==0){
+            TFFizetendo.setText("");
             JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
          }else{
             JOptionPane.showMessageDialog(rootPane, "Köszönjük a rendelést!","Rendelés visszaigazolás", JOptionPane.PLAIN_MESSAGE);
@@ -353,6 +354,11 @@ public class RendeloFelulet extends javax.swing.JFrame {
         int index = CMBPizzaValaszto.getSelectedIndex();
         int osszeg = 0;
         int mennyiseg = (int) SPMennyiseg.getValue();
+        
+        if(index ==0){
+            TFFizetendo.setText("");
+            JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
+        }
         if (index == 1){
             osszeg += 1780;
         }
@@ -386,10 +392,9 @@ public class RendeloFelulet extends javax.swing.JFrame {
         if (CBOlivaolaj.isSelected()){
             osszeg += 50;
         }
-        if(index ==0){
-            JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
-        }
+        
         osszeg = osszeg * mennyiseg;
+        
         if(index > 0){ 
             TFFizetendo.setText(osszeg + " Ft");
         }
