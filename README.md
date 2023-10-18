@@ -1,2 +1,2 @@
-# PizzaRendeloAlk
-GitHub-on létrehozva: Kosztolányi Ákos
+## PizzaRendeloAlk
+# GitHub-on létrehozva: _Kosztolányi Ákos_
