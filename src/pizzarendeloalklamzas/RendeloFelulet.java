@@ -326,6 +326,11 @@ public class RendeloFelulet extends javax.swing.JFrame {
         // TODO add your handling code here:
         String pizza = (String) CMBPizzaValaszto.getSelectedItem();
         int index = CMBPizzaValaszto.getSelectedIndex();
+        cmb(index, pizza);
+
+    }//GEN-LAST:event_CMBPizzaValasztoActionPerformed
+
+    private void cmb(int index, String pizza) throws HeadlessException {
         if (index == 1) {
             JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Mozzarella", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
         } else if (index == 2) {
@@ -335,10 +340,9 @@ public class RendeloFelulet extends javax.swing.JFrame {
         } else if (index == 4) {
             JOptionPane.showMessageDialog(rootPane, "Választott: " + pizza + "\nHozzávalók: Paradicsomszósz, Szardella, Olívaolaj", "Pizza típus", JOptionPane.PLAIN_MESSAGE);
         } else {
-
+            
         }
-
-    }//GEN-LAST:event_CMBPizzaValasztoActionPerformed
+    }
 
     private void BTRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTRendelesActionPerformed
         int index = CMBPizzaValaszto.getSelectedIndex();
@@ -347,6 +351,11 @@ public class RendeloFelulet extends javax.swing.JFrame {
         String szoveg = TFFizetendo.getText();
         osszeg = szamolas(index, osszeg, mennyiseg);
         
+        rendeles(index, szoveg, osszeg);
+
+    }//GEN-LAST:event_BTRendelesActionPerformed
+
+    private void rendeles(int index, String szoveg, int osszeg) throws HeadlessException {
         if (index == 0) {
             TFFizetendo.setText("");
             JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
@@ -358,8 +367,7 @@ public class RendeloFelulet extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem számoltad ki a rendelést!", "Hiba!", JOptionPane.ERROR_MESSAGE);
             }
         }
-
-    }//GEN-LAST:event_BTRendelesActionPerformed
+    }
 
     private void BTKiszamolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTKiszamolActionPerformed
         int index = CMBPizzaValaszto.getSelectedIndex();
