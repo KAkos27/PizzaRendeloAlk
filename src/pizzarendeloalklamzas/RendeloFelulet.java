@@ -340,13 +340,12 @@ public class RendeloFelulet extends javax.swing.JFrame {
     }//GEN-LAST:event_CMBPizzaValasztoActionPerformed
 
     private void BTRendelesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTRendelesActionPerformed
-        JOptionPane.showMessageDialog(rootPane, "Ez egy teszt verzió","Cím",2);
-        /*int index = CMBPizzaValaszto.getSelectedIndex();
+        int index = CMBPizzaValaszto.getSelectedIndex();
         if(index ==0){
             JOptionPane.showMessageDialog(rootPane, "Hiba!\nNem választottál pizzát!", "Hiba!", JOptionPane.ERROR_MESSAGE);
          }else{
             JOptionPane.showMessageDialog(rootPane, "Köszönjük a rendelést!","Rendelés visszaigazolás", JOptionPane.PLAIN_MESSAGE);
-        }*/
+        }
         
     }//GEN-LAST:event_BTRendelesActionPerformed
 
